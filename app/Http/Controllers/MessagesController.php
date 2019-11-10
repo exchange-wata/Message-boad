@@ -44,7 +44,11 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = new Message;
+        $message->content = $request->content;
+        $message->save();
+
+        return redirect('/');
     }
 
     /**
