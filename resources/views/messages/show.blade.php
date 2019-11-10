@@ -13,4 +13,7 @@
             <td>{{ $message->content }}</td>
         </tr>
     </table>
+    
+    {!! link_to_route('messages.edit', 'このメッセージを編集', ['id' => $message->id], ['class' => 'btn btn-light']) !!}
+
 @endsection
