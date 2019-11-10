@@ -90,6 +90,11 @@ class MessagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $message = Message::find($id);
+        $message->content = $request->content;
+        $message->save();
+
+        return redirect('/');
         
     }
 
@@ -101,6 +106,9 @@ class MessagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $message = Message::find($id);
+        $message->delete();
+
+        return redirect('/');
     }
 }
