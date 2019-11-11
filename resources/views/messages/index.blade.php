@@ -9,6 +9,7 @@
             <thead>
                 <tr>
                     <th>id</th>
+                    <th>タイトル</th>
                     <th>メッセージ</th>
                 </tr>
             </thead>
@@ -17,6 +18,7 @@
                 <tr>
                     <!--<td>{{ $message->id }}</td>-->
                     <td>{!! link_to_route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
+                    <td>{{ $message->title }}</td>
                     <td>{{ $message->content }}</td>
                 </tr>
                 @endforeach
